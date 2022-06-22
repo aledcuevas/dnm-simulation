@@ -6,7 +6,7 @@ import subprocess
 import numpy as np
 import math
 
-RSCRIPT_DIR = '/home/acuevasv/pycharm_projects/marketplace/simulation/rscripts/'
+RSCRIPT_DIR = None # Directory which contains the Rscripts used for Jolly Seber.
 
 '''
 Jolly Seber estimate using RMark package
@@ -28,7 +28,7 @@ def jolly_seber_estimate(encounter_history_file, mark_file_ct, r_simulation_env)
         # If we don't have a previous R_DATA file, we just pass NULL and the script will run the model for the first time
         prev_model = 'NULL'
     else:
-        # We check if the previous run was problematic. If it was, we don't want to seed it into the new run.
+        # We check if the previous run was problematic (e.g., convergence issues). If it was, we don't want to seed it into the new run.
         with open(ESTIMATE_FILE, 'r') as fr:
             js_estimate = fr.readline()
             js_estimate = round(float(js_estimate.strip('\n')))
@@ -183,19 +183,3 @@ def test_schnabel_estimator():
 
 if __name__ == '__main__':
     pass
-
-
-'''
-    # we will iterate through our encounter list and 0 out the first 1 in each row, the leftovers are all recaptures
-    reencounter_array = enc_history_list
-    # number of recaptures
-    denominator = 0
-    for i, row in enumerate(enc_history_list):
-        new_row = True
-        for j, cell in enumerate(row):
-            if new_row is True and cell == 1:
-                reencounter_array[i][j] = 0
-                new_row = False
-            else:
-                pass
-'''
