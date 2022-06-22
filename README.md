@@ -3,13 +3,51 @@
 The code above provides the infrastructure to simulate marketplaces as defined in our paper's model. Following,
 we provide an overview of what's needed to use this code.
 
-### Dependencies
+### Artifact Evaluation Roadmap
 
-No extraneous libraries are required beyond `numpy`, `pandas`, and `datetime`. To use the Jolly Seber abundance
-estimator we need to have the [RMark package](https://cran.r-project.org/web/packages/RMark/index.html).
-However, the simulations can still be conducted without.
+Following we provide a roadmap that aims to provide the reader with an understanding of: 1) the role 
+of the code in our paper, 2) what the expected inputs and outputs are, and 3) how to operate the code
+to obtain and evaluate the outputs.
 
-### Configuration
+#### Overview and Goal
+The above code aims to simulate the evolution of an artificial online marketplace. To do that, it will take as input 
+various parameters that probabilistically describe the creation and interaction of objects in the marketplace (e.g., what's 
+the probability of a new item appearing in day X)?
+
+For evaluation, we provide a set of dummy parameters that would allow the code to run. Note that, as described in our paper,
+we are not able to release the empirical distributions that we use for the paper. This is because of the agreement with our law
+enforcement partners. For more details, refer to the paper.
+
+#### Dependencies
+
+We used `Python 3.8.10` to test the code. No extraneous libraries are required beyond `numpy`, `pandas`, and `datetime`.
+To use the Jolly Seber abundance estimator, the [RMark package](https://cran.r-project.org/web/packages/RMark/index.html) is needed.
+However, this is not required to conduct the simulations.
+
+#### Running the Simulation & Expected Behavior
+To run, from the directory in your terminal do:
+```python
+python3 ./main.py
+```
+The code will create the following file structure:
+```commandline
+    .
+    ├── main.py                     
+    └── results/                    
+            └── <%m.%D-%H:%M_s>
+                    ├── pr_parameters.json
+                    ├── scraper_parameters.json
+                    ├── sim_parameters.json
+                    ├── simulation_config_summary.txt
+                    └── serialized/
+                            ├── states/
+                            ├── <%m.%D-%H:%M_s>
+                            └── <scraper>/
+                                    └── states
+```
+
+
+### Configuration Advice for Future Researchers
 
 There's no one way to simulate a marketplace. At its core, what we are doing is defining various probability 
 distributions for the various objects and events that occur in a marketplace. We can use well-defined distributions

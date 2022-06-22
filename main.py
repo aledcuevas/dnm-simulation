@@ -21,12 +21,12 @@ import statistics, utility
 
 pd.set_option('display.float_format', lambda x: '%.5f' % x)
 
-SMA_DICTIONARY =                None
+SMA_DICTIONARY =                './empirical_distribs/dummy_sma.json'
 BASE_SIMULATION_RESULT_FOLDER = './results/'
 
-EMP_LISTING_PRICES =    None
-EMP_LISTINGS_P_VENDOR = None
-EMP_FB_PER_LISTING =    None
+EMP_LISTING_PRICES =    './empirical_distribs/dummy_prices.csv'
+EMP_LISTINGS_P_VENDOR = './empirical_distribs/listings_per_vendor_dummy.csv'
+EMP_FB_PER_LISTING =    './empirical_distribs/fbs_per_listing_dummy.csv'
 
 MARKETPLACE_EVENTS = {"NEW_ITEM": 0,
                       "REVIEW": 0,
