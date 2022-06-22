@@ -152,7 +152,7 @@ class Marketplace:
         bk_listing_prices = bk_listing_prices[bk_listing_prices['price'] <= 250000]
 
         self.exp_prices = bk_listing_prices['price'].to_dict()
-        self.exp_vendor_listings = bk_listings_per_vendor['id'].to_dict()
+        self.exp_vendor_listings = bk_listings_per_vendor['listings'].to_dict()
         self.exp_listing_popularity = bk_feedbacks_per_listing['count_feedbacks'].to_dict()
 
     def sampleNewEvent(self):
