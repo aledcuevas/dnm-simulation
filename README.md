@@ -76,3 +76,8 @@ thus defining a probability space is harder than just using frequency as a weigh
 Other parameters that ought to be tweaked for the simulation are encased in the following variables:
 `SIMULATION_PARAMETERS`, `SCRAPING_PARAMETERS`, and `PR_PARAMETERS`. 
 
+
+### Usage and Output
+
+Once the simulation is parameterized, the simulation can be started. On the screen you will see a counter of days. This counter tracks the current day being simulated in the market. In the current state, the simulation will not save any results to disk apart from parameter summaries. This is intentional. There are many Python dictionaries which are used to track various things in the scrapers, such as abundance estimations, revenue estimates, and coverage. These can be chosed to be serialized to disk as needed.
+
