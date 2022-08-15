@@ -4,7 +4,9 @@ The code above provides the infrastructure to simulate marketplaces as defined i
 we provide an overview of what's needed to use this code.
 
 For the public data used in the paper, see: https://arima.cylab.cmu.edu/markets/index.php
+
 A anonymized version can also be requested at: https://www.impactcybertrust.org/dataset_view?idDataset=1498
+
 A non-anonymized version can be requested at: https://www.impactcybertrust.org/dataset_view?idDataset=1499
 
 ### Artifact Evaluation Roadmap
